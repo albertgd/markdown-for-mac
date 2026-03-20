@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown for Mac</title>
+
+  <!-- Markdown body styles (GitHub style, auto dark/light) -->
+  <link rel="stylesheet" href="../node_modules/github-markdown-css/github-markdown.css" />
+
+  <!-- Syntax highlighting -->
+  <link rel="stylesheet" href="../node_modules/highlight.js/styles/github.min.css" media="(prefers-color-scheme: light)" />
+  <link rel="stylesheet" href="../node_modules/highlight.js/styles/github-dark.min.css" media="(prefers-color-scheme: dark)" />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Custom title bar -->
+    <div id="title-bar">
+      <div id="title-bar-drag"></div>
+      <button id="sidebar-toggle" title="Toggle Sidebar (⌘\)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <rect x="1" y="3" width="14" height="1.5" rx="0.75"/>
+          <rect x="1" y="7.25" width="14" height="1.5" rx="0.75"/>
+          <rect x="1" y="11.5" width="14" height="1.5" rx="0.75"/>
+        </svg>
+      </button>
+      <span id="title-file-name">Markdown for Mac</span>
+      <div id="toolbar-right">
+        <button id="zoom-out" title="Zoom Out (⌘-)">−</button>
+        <span id="zoom-level">100%</span>
+        <button id="zoom-in" title="Zoom In (⌘+)">+</button>
+      </div>
+    </div>
+
+    <!-- Main layout -->
+    <div id="layout">
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div id="sidebar-tabs">
+          <button class="sidebar-tab active" data-tab="toc">Contents</button>
+          <button class="sidebar-tab" data-tab="files">Files</button>
+        </div>
+
+        <div id="toc-panel" class="sidebar-panel">
+          <div id="toc-list"></div>
+          <div id="toc-empty" class="sidebar-empty">
+            <p>Open a markdown file to see its table of contents.</p>
+          </div>
+        </div>
+
+        <div id="files-panel" class="sidebar-panel hidden">
+          <div id="file-tree"></div>
+          <div id="files-empty" class="sidebar-empty">
+            <p>Open a folder to browse markdown files.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content area -->
+      <div id="content-area">
+
+        <!-- Welcome screen -->
+        <div id="welcome">
+          <div id="welcome-inner">
+            <div id="welcome-icon">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <rect width="72" height="72" rx="16" fill="currentColor" opacity="0.08"/>
+                <path d="M14 22h44M14 30h44M14 38h28M14 46h20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="52" cy="48" r="10" fill="currentColor" opacity="0.15"/>
+                <path d="M49 48l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h1>Markdown for Mac</h1>
+            <p>A clean, native markdown viewer for macOS.</p>
+            <div id="welcome-buttons">
+              <button id="welcome-open-btn" class="btn-primary">Open File…</button>
+              <button id="welcome-folder-btn" class="btn-secondary">Open Folder…</button>
+            </div>
+            <div id="welcome-drop-hint">or drag and drop a .md file anywhere</div>
+            <div id="recent-section">
+              <h3>Recent Files</h3>
+              <ul id="recent-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Markdown content -->
+        <div id="scroll-wrapper">
+          <article id="content" class="markdown-body"></article>
+        </div>
+
+        <!-- Find bar -->
+        <div id="find-bar">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" opacity="0.5">
+            <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M9.5 9.5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input id="find-input" type="text" placeholder="Find in document…" />
+          <span id="find-count"></span>
+          <button id="find-prev" title="Previous (Shift+Enter)">↑</button>
+          <button id="find-next-btn" title="Next (Enter)">↓</button>
+          <button id="find-close" title="Close (Esc)">✕</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

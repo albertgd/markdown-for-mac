@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A84FF"/>
+      <stop offset="100%" stop-color="#003A9E"/>
+    </linearGradient>
+    <!-- Subtle inner glow at top-left -->
+    <radialGradient id="glow" cx="25%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background rounded rectangle (macOS standard: 22.37% corner radius) -->
+  <rect width="1024" height="1024" rx="224" ry="224" fill="url(#bg)"/>
+  <!-- Glow overlay -->
+  <rect width="1024" height="1024" rx="224" ry="224" fill="url(#glow)"/>
+
+  <!-- Subtle background hash mark (very faint, gives a markdown feel) -->
+  <text
+    x="512" y="680"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="880"
+    font-weight="900"
+    fill="white"
+    fill-opacity="0.04"
+    text-anchor="middle"
+    dominant-baseline="middle">#</text>
+
+  <!-- MD — main text -->
+  <text
+    x="512" y="565"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="410"
+    font-weight="800"
+    fill="white"
+    text-anchor="middle"
+    letter-spacing="-12">MD</text>
+
+  <!-- Thin separator -->
+  <rect x="337" y="622" width="350" height="3" rx="1.5" fill="white" opacity="0.25"/>
+
+  <!-- MAC — subtitle text -->
+  <text
+    x="536" y="742"
+    font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+    font-size="106"
+    font-weight="300"
+    fill="white"
+    fill-opacity="0.88"
+    text-anchor="middle"
+    letter-spacing="48">MAC</text>
+</svg>
