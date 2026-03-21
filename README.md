@@ -22,25 +22,31 @@ A clean, native markdown viewer for macOS built with Electron.
 
 ### Option 1 — Build from source
 
+First, make sure you have [Node.js](https://nodejs.org) installed. Then:
+
 ```bash
-git clone https://github.com/yourusername/markdown-for-mac.git
+git clone https://github.com/albertgd/markdown-for-mac.git
 cd markdown-for-mac
-npm install
+node --version   # should be 18 or later
+npx electron-builder install-app-deps
 npm run build
 ```
+
+> If `npm` is not found, install Node.js first: `brew install node`
 
 Then drag `dist/mac-arm64/Markdown for Mac.app` into your `/Applications` folder.
 
 ### Option 2 — Homebrew (personal tap)
 
 ```bash
-brew tap yourusername/tap
+brew tap albertgd/tap
 brew install --cask markdown-for-mac
 ```
 
 ### Option 3 — Run in development mode
 
 ```bash
+brew install node   # if not already installed
 npm install
 npm start
 ```
@@ -69,7 +75,7 @@ npm start
 ### Requirements
 
 - macOS 12 or later
-- Node.js 18 or later
+- Node.js 18 or later — install via `brew install node` if not present
 
 ### Project structure
 
@@ -98,13 +104,14 @@ bash scripts/create-icon.sh
 ### Build a distributable `.app`
 
 ```bash
-npm run build   # outputs to dist/mac-arm64/
+npm install      # install dependencies first
+npm run build    # outputs to dist/mac-arm64/
 ```
 
 ### Build a `.dmg` installer
 
 ```bash
-npm run dist    # outputs dist/Markdown for Mac-x.x.x.dmg
+npm run dist     # outputs dist/Markdown for Mac-x.x.x.dmg
 ```
 
 ## Tech stack
