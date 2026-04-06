@@ -130,7 +130,7 @@ Consider supporting its development. Your donations help me dedicate more time t
 
 [![Buy Me a Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=albertgd&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/albertgd)
 
-[![QR Code](assets/bmc_qr.png)](https://buymeacoffee.com/albertgd)
+<a href="https://buymeacoffee.com/albertgd"><img src="assets/bmc_qr.png" width="160" alt="QR Code"></a>
 
 ## Author
 
